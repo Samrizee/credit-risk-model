@@ -7,22 +7,6 @@ import pandas as pd
 import seaborn as sns
 
 ###############################################################################
-# I/O Functions
-###############################################################################
-
-def load_dataset(path: str | Path, nrows: int | None = None) -> pd.DataFrame:
-    """Load a CSV or Excel dataset."""
-    path = Path(path)
-    if path.suffix in {".csv"}:
-        df = pd.read_csv(path, nrows=nrows)
-    elif path.suffix in {".xlsx", ".xls"}:
-        df = pd.read_excel(path, nrows=nrows)
-    else:
-        raise ValueError(f"Unsupported file format: {path.suffix}")
-    return df
-
-
-###############################################################################
 # Visualization Functions
 ###############################################################################
 
